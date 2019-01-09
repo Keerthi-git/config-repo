@@ -8,7 +8,7 @@ node
     
     stage('Sonarqube analysis)
     {
-        mvn clean sonar:sonar
+        sh sonar-scanner
     }
 
 }
