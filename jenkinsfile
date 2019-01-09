@@ -6,7 +6,7 @@ node
         echo "success"
     }
     
-    stage('Sonarqube analysis)
+    stage('Sonarqube analysis')
     {
         def mvnHome= tool name: 'maven-3',type: 'maven'
         withSonarQubeEnv('Sonar'){
