@@ -10,7 +10,7 @@ node
     {
         
          node {
-              withSonarQubeEnv('My SonarQube Server') {
+              withSonarQubeEnv('qube-1') {
                  sh 'mvn clean package sonar:sonar'
               }
           }
