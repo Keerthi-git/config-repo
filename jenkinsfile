@@ -9,7 +9,11 @@ node
     stage('Sonarqube analysis')
     {
         
-        sh "/home/minduseradmin/sonarQube/sonar-scanner-3.2.0.1227-linux/bin/sonar-scanner"
+         node {
+              withSonarQubeEnv('My SonarQube Server') {
+                 sh 'mvn clean package sonar:sonar'
+              }
+          }
         
     }
 
