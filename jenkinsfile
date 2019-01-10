@@ -7,14 +7,7 @@ node
         echo "success"
     }
     
-    stage('Sonarqube analysis')
-    {
-              withSonarQubeEnv('qube-1') {
-                 sh 'mvn sonar:sonar \
-                 -Dsonar.host.url=http://my84839dns.eastus2.cloudapp.azure.com:9000 \
-  -Dsonar.login=163e924bda63b7fa754034c6c24c5cb084fca105'
-              }   
-    }
+  
     
     stage('maven buils')
     {
