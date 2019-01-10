@@ -16,5 +16,9 @@ node
               }   
     }
     
+    stage('maven buils')
+    {
+        sh 'mvn clean install'
+     }
    
 }
