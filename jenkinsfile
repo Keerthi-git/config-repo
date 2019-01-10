@@ -16,7 +16,7 @@ node
     
     stage('tomact deployment')
     {
-        sh 'cp target/*.war /home/minduseradmin/apache-tomcat-8.5.35/webapps
+        sh 'cp target/*.war /home/minduseradmin/apache-tomcat-8.5.35/webapps'
     }
    
 }
