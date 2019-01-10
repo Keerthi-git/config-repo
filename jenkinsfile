@@ -9,9 +9,14 @@ node
     
   
     
-    stage('maven buils')
+    stage('maven build')
     {
         sh 'mvn clean install'
-     }
+    }
+    
+    stage('tomact deployment')
+    {
+        sh 'cp target/*.war /home/minduseradmin/apache-tomcat-8.5.35/webapps
+    }
    
 }
