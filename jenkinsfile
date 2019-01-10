@@ -2,18 +2,8 @@ node
 {
     stage('checkout')
     {
-        checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '9fee7a01-f558-41c7-acd0-f499c134f74f', url: 'https://github.com/Keerthi-git/sample.git']]])
+        git url:'https://github.com/Keerthi-git/sample.git'
+        
         echo "success"
     }
-    
-    stage('Sonarqube analysis')
-    {
-         node {
-              withSonarQubeEnv('qube-1') {
-                 sh 'mvn sonar:sonar -Dsonar.host.url=http://my84839dns.eastus2.cloudapp.azure.com:9000'
-              }
-          }
-        
-    }
-
 }
