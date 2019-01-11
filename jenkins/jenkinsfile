@@ -8,5 +8,5 @@ stages
         echo 'load success'
     } 
     
-    
+  }  
 }
