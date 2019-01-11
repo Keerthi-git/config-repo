@@ -10,8 +10,8 @@ stages
     
     stage('checkout')
     {
-        git url:prop.URL
-            branch: prop.BRANCH
+        git url: $prop.URL
+            branch: $prop.BRANCH
         echo "success"
     }
 }
