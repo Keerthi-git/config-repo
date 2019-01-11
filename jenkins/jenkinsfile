@@ -4,5 +4,14 @@ node
     {
         def prop=readProperties file: 'config-repo/properties/pipeline.properties'
         echo "load success"
-    }    
+    } 
+    
+    stage('checkout')
+    {
+        git url:prop.URL
+            branch:prop.BRANCH
+        
+        echo "checkout success"
+     }
+     
 }
