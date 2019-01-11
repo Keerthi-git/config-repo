@@ -5,7 +5,7 @@ stages
     stage('loading properties')
     {
         def prop=readProperties file: 'config-repo/properties/pipeline.properties'
-        echo 'load success'
+        echo "load success"
     } 
     
   }  
