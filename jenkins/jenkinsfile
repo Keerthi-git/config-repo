@@ -1,0 +1,17 @@
+pipeline{
+agent any
+stages
+{
+    stage('loading properties')
+    {
+        prop=readproperties file:'properties/pipeline-properties.properties'
+        echo 'load success'
+    } 
+    
+    stage('checkout')
+    {
+        git url:prop.URL
+            branch: prop.BRANCH
+        echo "success"
+    }
+}
