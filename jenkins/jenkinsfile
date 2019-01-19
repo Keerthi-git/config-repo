@@ -2,7 +2,7 @@ node
 {
     script
     {
-        sh 'rm -rf  ../'+jobName+'/*'
+        sh 'rm -rf  /var/lib/jenkins/workspace/Firstpipeline'
         echo "cleaned workspace"
      }
      
