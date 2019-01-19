@@ -1,29 +1,9 @@
 node
 {
-    stage('loading properties')
+    script
     {
-         prop=readProperties file: 'config-repo/properties/pipeline.properties'
-        echo "load success"
-    } 
-    
-    stage('checkout')
-    {
-        git url:prop.URL
-            branch:prop.BRANCH
-        
-        echo prop.URL
-        echo "checkout success"
+        sh 'rm -rf  ../'+jobName+'/*'
+        echo "cleaned workspace"
      }
-     
-     stage('mavnen build')
-     {
-       sh 'mvn clean install'
-    }
-    
-    stage('tomact deployment')
-    {
-        sh 'cp target/*.war /home/minduseradmin/apache-tomcat-8.5.35/webapps'
-        echo "deploy success"
-    } 
      
 }
