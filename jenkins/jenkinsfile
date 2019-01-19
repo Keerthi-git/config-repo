@@ -14,14 +14,14 @@ node
         echo "checkout success"
      }
      
-     stage('mavne build')
+     stage('mavnen build')
      {
-       sh mvn clean install
+       sh 'mvn clean install'
     }
     
     stage('tomact deployment')
     {
-        sh cp prop.WAR_FILE prop.DEPLOY_LOCATION
+        sh 'cp prop.WAR_FILE prop.DEPLOY_LOCATION'
         echo "deploy success"
     } 
      
