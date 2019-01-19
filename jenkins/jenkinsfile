@@ -11,7 +11,7 @@ node
         git url:prop.URL
             branch:prop.BRANCH
         
-        echoi prop.URL
+        echo prop.URL
         echo "checkout success"
      }
      
