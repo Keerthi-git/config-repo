@@ -8,22 +8,9 @@ node
     
     stage('checkout')
     {
-        git url:prop.URL
-            branch:prop.BRANCH
-        
-        echo prop.URL
+        git url:'https://github.com/Keerthi-git/Mavenproject.git'
+            branch:'master'
+       
         echo "checkout success"
      }
-     
-     stage('mavnen build')
-     {
-       sh 'mvn clean install'
-    }
-    
-    stage('tomact deployment')
-    {
-        sh 'cp target/*.war /home/minduseradmin/apache-tomcat-8.5.35/webapps'
-        echo "deploy success"
-    } 
-     
 }
