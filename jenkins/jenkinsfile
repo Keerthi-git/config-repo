@@ -14,4 +14,15 @@ node
         echo "checkout success"
      }
      
+     stage('mavne build')
+     {
+       sh mvn clean install
+    }
+    
+    stage('tomact deployment')
+    {
+        sh cp prop.WAR_FILE+' '+prop.DEPLOY_LOCATION
+        echo "deploy success"
+    } 
+     
 }
