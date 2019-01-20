@@ -15,6 +15,14 @@ stages {
                         cicdUtil.execute();
                         } 
                 }
-        } 
+          } 
+     }
+     
+    post {
+            always {
+                script {
+                      common.cleanWorkspace();
+                 }
+            }
      }
 }
