@@ -21,7 +21,7 @@ node
     
     stage('artifactry upload')
     {
-        server= Artifactory.server prop.ARTIFACTORY_ID
+        server= Artifactory.server "artifactory-1"
         uploadSpec="""{
         "files":[{
             "pattern":"target/*.war",
