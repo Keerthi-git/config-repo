@@ -21,7 +21,7 @@ node
     
     stage('artifactory upload')
     {
-        server= Artifactory.server prop.ARTIFACTORY_ID
+        server= Artifactory.server 'jfrog prop.ARTIFACTORY_ID'
         uploadSpec="""{
         "files":[{
             "pattern":"target/*.war",
