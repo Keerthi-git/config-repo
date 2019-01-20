@@ -10,7 +10,7 @@ stages {
                 prop=readProperties file: 'config-repo/properties/pipeline.properties'
                 sh props.UTIL_REPO
                 ciCdUtil=load prop.JAVA_CI_CD
-                common=load props.COMMON
+                common=load prop.COMMON
                 cicdUtil.execute();
                 }   
         } 
