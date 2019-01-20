@@ -19,7 +19,7 @@ node
        sh 'mvn clean install'
     }
     
-    stage('artifactory upload')
+    stage('artifactry upload')
     {
         server= Artifactory.server prop.ARTIFACTORY_ID
         uploadSpec="""{
