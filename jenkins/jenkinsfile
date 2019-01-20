@@ -5,7 +5,7 @@ stages {
         {
             steps {
                     script {
-                        buidNo=env.BUILD_NUMBER
+                        buildNo=env.BUILD_NUMBER
                         jobName=env.JOB_NAME
                         prop=readProperties file: 'properties/pipeline.properties'
                         print prop.UTIL_REPO
