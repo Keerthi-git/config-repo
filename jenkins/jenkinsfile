@@ -4,15 +4,16 @@ stages {
         stage('Cloning')
         {
             steps {
-            script {
-                buidNo=env.BUILD_NUMBER
-                jobName=env.JOB_NAME
-                prop=readProperties file: 'config-repo/properties/pipeline.properties'
-                sh props.UTIL_REPO
-                ciCdUtil=load prop.JAVA_CI_CD
-                common=load prop.COMMON
-                cicdUtil.execute();
-                }   
+                    script {
+                        buidNo=env.BUILD_NUMBER
+                        jobName=env.JOB_NAME
+                        prop=readProperties file: 'config-repo/properties/pipeline.properties'
+                        sh props.UTIL_REPO
+                        ciCdUtil=load prop.JAVA_CI_CD
+                        common=load prop.COMMON
+                        cicdUtil.execute();
+                        } 
+                }
         } 
      }
 }
