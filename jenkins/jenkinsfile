@@ -10,8 +10,8 @@ stages {
                         prop=readProperties file: 'properties/pipeline.properties'
                         print prop.UTIL_REPO
                         sh prop.UTIL_REPO
-                        def ciCdUtil=load prop.JAVA_CI_CD
-                        def common=load prop.COMMON
+                        cicdUtil=load prop.JAVA_CI_CD
+                        common=load prop.COMMON
                         cicdUtil.execute();
                         } 
                 }
