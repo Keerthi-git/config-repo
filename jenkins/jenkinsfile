@@ -25,7 +25,7 @@ node
         uploadSpec="""{
         "files":[{
             "pattern":"target/*.war",
-            "target":"example-repo-local"
+            "target":"example-repo-local/${artifactId}/${version}.${buildNo}/"
             }]
             }"""
             server.upload(uploadSpec)
