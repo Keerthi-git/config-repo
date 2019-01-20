@@ -8,7 +8,7 @@ stages {
                         buidNo=env.BUILD_NUMBER
                         jobName=env.JOB_NAME
                         prop=readProperties file: 'config-repo/properties/pipeline.properties'
-                        print '${prop.UTIL_REPO}'
+                        print prop.UTIL_REPO
                         sh prop.UTIL_REPO
                         ciCdUtil=load prop.JAVA_CI_CD
                         common=load prop.COMMON
