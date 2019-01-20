@@ -1,33 +1,18 @@
-node
-{
-    stage('loading properties')
-    {
-         prop=readProperties file: 'config-repo/properties/pipeline.properties'
-        echo "load success"
-    } 
-    
-    stage('checkout')
-    {
-        git url:prop.URL
-            branch:prop.BRANCH
-            
-        echo "checkout success"
+pipeline {
+agent any
+stages {
+        stage('Cloning')
+        {
+            steps {
+            script {
+                buidNo=env.BUILD_NUMBER
+                jobName=env.JOB_NAME
+                prop=readProperties file: 'config-repo/properties/pipeline.properties'
+                sh props.UTIL_REPO
+                ciCdUtil=load prop.JAVA_CI_CD
+                common=load props.COMMON
+                cicdUtil.execute();
+                }   
+        } 
      }
-     
-     stage('maven build')
-     {
-       sh 'mvn clean install'
-    }
-    
-    stage('artifactry upload')
-    {
-        server= Artifactory.server "artifactory-1"
-        uploadSpec="""{
-        "files":[{
-            "pattern":"target/*.war",
-            "target":"example-repo-local/${artifactId}/${version}.${buildNo}/"
-            }]
-            }"""
-            server.upload(uploadSpec)
-     }   
 }
