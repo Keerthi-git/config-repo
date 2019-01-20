@@ -14,7 +14,7 @@ node
         echo "checkout success"
      }
      
-     stage('mavnen build')
+     stage('maven build')
      {
        sh 'mvn clean install'
     }
@@ -29,8 +29,5 @@ node
             }]
             }"""
             server.upload(uploadSpec)
-     }
-    
-   
-     
+     }   
 }
