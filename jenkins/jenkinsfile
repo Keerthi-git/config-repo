@@ -21,7 +21,7 @@ stages {
     post {
             always {
                 script {
-                      
+                      common.sendEmail();
                       common.cleanWorkspace();
                  }
             }
